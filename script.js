@@ -1,5 +1,5 @@
 function addInput() {
-    inputScreen.innerText = inputValue;
+    mainScreen.innerText = inputValue;
 }
 
 function add() {
@@ -26,20 +26,20 @@ function clear() {
     
 }
 
-const inputScreen = document.getElementById("input");
-const outputScreen = document.getElementById("output");
+const sideScreen = document.getElementById("input");
+const mainScreen = document.getElementById("output");
 
-let inputValue = "0";
-let outputValue = "0";
-/*
-const add = document.getElementById("+");
-const substract = document.getElementById("-");
-const multiply = document.getElementById("x");
-const divide = document.getElementById("/");
-const equals = document.getElementById("=");
-const del = document.getElementById("del");
-const clear = document.getElementById("C");
-*/
+let inputValue = "";
+let outputValue = "";
+
+const addBtn = document.getElementById("+");
+const substractBtn = document.getElementById("-");
+const multiplyBtn = document.getElementById("x");
+const divideBtn = document.getElementById("/");
+const equalBtn = document.getElementById("=");
+const delBtn = document.getElementById("del");
+const clearBtn = document.getElementById("C");
+
 
 const zero = document.getElementById("0");
 const one = document.getElementById("1");
