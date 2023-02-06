@@ -22,6 +22,16 @@ function operate() {
 
 }
 
+function del() {
+    inputValue = inputValue.slice(0, -1);
+    if (inputValue == "") {
+        mainScreen.innerText = defaultVaule;
+    }
+    else {
+        addInput();
+    }
+}
+
 function clear() {
     mainScreen.innerText = defaultVaule;
     sideScreen.innerText = defaultVaule;
@@ -55,6 +65,8 @@ const six = document.getElementById("6");
 const seven = document.getElementById("7");
 const eight = document.getElementById("8");
 const nine = document.getElementById("9");
+
+delBtn.addEventListener("click", del);
 
 clearBtn.addEventListener("click", clear);
 
