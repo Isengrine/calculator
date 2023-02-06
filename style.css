@@ -17,13 +17,23 @@ body {
 #screen {
     background-color: wheat;
     margin: 24px;
-    padding: 48px;
+    padding: 12px;
+}
+
+#input {
+    font-size: 18px;
+}
+
+#output {
+    font-size: 36px;
+    text-align: end;
 }
 
 #pad {
     margin: 12px;
     display: flex;
-    justify-content: space-evenly;
+    flex: 1;
+    align-items: center;
 }
 
 #numbers {
