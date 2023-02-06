@@ -1,0 +1,39 @@
+body {
+    background-color: gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calculator {
+    width: 360px;
+    height: 480px;
+    background-color: aquamarine;
+    border: solid;
+    display: flex;
+    flex-direction: column;
+}
+
+#screen {
+    background-color: wheat;
+    margin: 24px;
+    padding: 48px;
+}
+
+#pad {
+    margin: 12px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#numbers {
+    min-width: 200px;
+}
+
+#operators {
+    min-width: 140px;
+}
+
+button {
+    padding: 24px;
+}
