@@ -23,12 +23,16 @@ function operate() {
 }
 
 function clear() {
-    
+    mainScreen.innerText = defaultVaule;
+    sideScreen.innerText = defaultVaule;
+    inputValue = "";
+    outputValue = "";
 }
 
 const sideScreen = document.getElementById("input");
 const mainScreen = document.getElementById("output");
 
+let defaultVaule = "0";
 let inputValue = "";
 let outputValue = "";
 
@@ -51,6 +55,8 @@ const six = document.getElementById("6");
 const seven = document.getElementById("7");
 const eight = document.getElementById("8");
 const nine = document.getElementById("9");
+
+clearBtn.addEventListener("click", clear);
 
 zero.addEventListener("click", () => {
     inputValue += "0";
