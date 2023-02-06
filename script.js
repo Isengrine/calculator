@@ -29,9 +29,9 @@ function clear() {
 const inputScreen = document.getElementById("input");
 const outputScreen = document.getElementById("output");
 
-let inputValue = 0;
-let outputValue = 0;
-
+let inputValue = "0";
+let outputValue = "0";
+/*
 const add = document.getElementById("+");
 const substract = document.getElementById("-");
 const multiply = document.getElementById("x");
@@ -39,6 +39,7 @@ const divide = document.getElementById("/");
 const equals = document.getElementById("=");
 const del = document.getElementById("del");
 const clear = document.getElementById("C");
+*/
 
 const zero = document.getElementById("0");
 const one = document.getElementById("1");
@@ -50,3 +51,53 @@ const six = document.getElementById("6");
 const seven = document.getElementById("7");
 const eight = document.getElementById("8");
 const nine = document.getElementById("9");
+
+zero.addEventListener("click", () => {
+    inputValue += "0";
+    addInput();
+})
+
+one.addEventListener("click", () => {
+    inputValue += "1";
+    addInput();
+})
+
+two.addEventListener("click", () => {
+    inputValue += "2";
+    addInput();
+})
+
+three.addEventListener("click", () => {
+    inputValue += "3";
+    addInput();
+})
+
+four.addEventListener("click", () => {
+    inputValue += "4";
+    addInput();
+})
+
+five.addEventListener("click", () => {
+    inputValue += "5";
+    addInput();
+})
+
+six.addEventListener("click", () => {
+    inputValue += "6";
+    addInput();
+})
+
+seven.addEventListener("click", () => {
+    inputValue += "7";
+    addInput();
+})
+
+eight.addEventListener("click", () => {
+    inputValue += "8";
+    addInput();
+})
+
+nine.addEventListener("click", () => {
+    inputValue += "9";
+    addInput();
+})
