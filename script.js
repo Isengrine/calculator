@@ -10,52 +10,45 @@ function addInput() {
     }
 }
 
-function add(numA, numB) {
-
+function add() {
+    mainScreen.innerText = inputValue + outputValue;
 }
 
-function substract(numA, numB) {
-
+function substract() {
+    mainScreen.innerText = inputValue - outputValue;
 }
 
-function multiply(numA, numB) {
-
+function multiply() {
+    mainScreen.innerText = inputValue * outputValue;
 }
 
-function divide(numA, numB) {
-
+function divide() {
+    mainScreen.innerText = inputValue / outputValue;
 }
 
-function operate(operators) {
-    operators.forEach(operator => {
-        operator.addEventListener("click", () => {
-            switch (operator.id) {
-                case "+":
-                    outputValue = inputValue + " +";
-                    inputValue = "";
-                    addInput();
-                    break;
-                case "-":
-                    outputValue = inputValue + " -";
-                    inputValue = "";
-                    addInput();
-                    break;
-                case "x":
-                    outputValue = inputValue + " x";
-                    inputValue = "";
-                    addInput();
-                    break;
-                case "/":
-                    outputValue = inputValue + " /";
-                    inputValue = "";
-                    addInput();
-                    break;
-                case "=":
-                    console.log("= clicked!");
-                    break;
-            }
-        });
-    });
+function operate() {
+    inputValue = parseFloat(inputValue);
+    outputValue = parseFloat(outputValue);
+    switch (operator) {
+        case "+":
+            add();
+            break;
+        
+        case "-":
+            substract();
+            break;
+
+        case "x":
+            multiply();
+            break;
+
+        case "/":
+            divide();
+            break;
+
+        default:
+            break;
+    }
 }
 
 function del() {
@@ -75,6 +68,7 @@ const mainScreen = document.getElementById("output");
 let defaultVaule = 0;
 let inputValue = "";
 let outputValue = "";
+let operator = "";
 
 const operators = document.querySelectorAll(".operator");
 const addBtn = document.getElementById("+");
@@ -99,6 +93,54 @@ const nine = document.getElementById("9");
 delBtn.addEventListener("click", del);
 
 clearBtn.addEventListener("click", clear);
+
+addBtn.addEventListener("click", () => {
+    if (outputValue == "") {
+        outputValue = inputValue + " +";
+        operator = "+";
+        inputValue = "";
+        addInput();
+    }
+    else {
+        operate();
+    }
+})
+
+substractBtn.addEventListener("click", () => {
+    if (outputValue == "") {
+        outputValue = inputValue + " -";
+        operator = "-";
+        inputValue = "";
+        addInput();
+    }
+    else {
+        operate();
+    }
+})
+
+multiplyBtn.addEventListener("click", () => {
+    if (outputValue == "") {
+        outputValue = inputValue + " x";
+        operator = "x";
+        inputValue = "";
+        addInput();
+    }
+    else {
+        operate();
+    }
+})
+
+divideBtn.addEventListener("click", () => {
+    if (outputValue == "") {
+        outputValue = inputValue + " /";
+        operator = "/";
+        inputValue = "";
+        addInput();
+    }
+    else {
+        operate();
+    }
+})
 
 zero.addEventListener("click", () => {
     inputValue += "0";
@@ -149,5 +191,3 @@ nine.addEventListener("click", () => {
     inputValue += "9";
     addInput();
 })
-
-operate(operators);
