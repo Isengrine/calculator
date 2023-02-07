@@ -33,19 +33,15 @@ function operate() {
         case "+":
             add();
             break;
-        
         case "-":
             substract();
             break;
-
         case "x":
             multiply();
             break;
-
         case "/":
             divide();
             break;
-
         default:
             break;
     }
@@ -141,6 +137,8 @@ divideBtn.addEventListener("click", () => {
         operate();
     }
 })
+
+equalBtn.addEventListener("click", operate);
 
 zero.addEventListener("click", () => {
     inputValue += "0";
