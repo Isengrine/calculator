@@ -1,5 +1,13 @@
 function addInput() {
     mainScreen.innerText = inputValue;
+    sideScreen.innerText = outputValue;
+
+    if (inputValue == "") {
+        mainScreen.innerText = defaultVaule;
+    }
+    if (outputValue == ""){
+        sideScreen.innerText = defaultVaule;
+    }
 }
 
 function add(numA, numB) {
@@ -23,16 +31,24 @@ function operate(operators) {
         operator.addEventListener("click", () => {
             switch (operator.id) {
                 case "+":
-                    console.log("+ clicked!");
+                    outputValue = inputValue + " +";
+                    inputValue = "";
+                    addInput();
                     break;
                 case "-":
-                    console.log("- clicked!");
+                    outputValue = inputValue + " -";
+                    inputValue = "";
+                    addInput();
                     break;
                 case "x":
-                    console.log("x clicked!");
+                    outputValue = inputValue + " x";
+                    inputValue = "";
+                    addInput();
                     break;
                 case "/":
-                    console.log("/ clicked!");
+                    outputValue = inputValue + " /";
+                    inputValue = "";
+                    addInput();
                     break;
                 case "=":
                     console.log("= clicked!");
@@ -44,25 +60,19 @@ function operate(operators) {
 
 function del() {
     inputValue = inputValue.slice(0, -1);
-    if (inputValue == "") {
-        mainScreen.innerText = defaultVaule;
-    }
-    else {
-        addInput();
-    }
+    addInput();
 }
 
 function clear() {
-    mainScreen.innerText = defaultVaule;
-    sideScreen.innerText = defaultVaule;
     inputValue = "";
     outputValue = "";
+    addInput();
 }
 
 const sideScreen = document.getElementById("input");
 const mainScreen = document.getElementById("output");
 
-let defaultVaule = "0";
+let defaultVaule = 0;
 let inputValue = "";
 let outputValue = "";
 
