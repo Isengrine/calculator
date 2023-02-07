@@ -27,8 +27,10 @@ function divide() {
 }
 
 function operate() {
-    inputValue = parseFloat(inputValue);
-    outputValue = parseFloat(outputValue);
+    if (inputValue != "") {
+        inputValue = parseFloat(inputValue);
+        outputValue = parseFloat(outputValue);
+    }
     switch (operator) {
         case "+":
             add();
@@ -55,6 +57,7 @@ function del() {
 function clear() {
     inputValue = "";
     outputValue = "";
+    operator = "";
     addInput();
 }
 
@@ -90,10 +93,13 @@ delBtn.addEventListener("click", del);
 
 clearBtn.addEventListener("click", clear);
 
+equalBtn.addEventListener("click", operate);
+
 addBtn.addEventListener("click", () => {
     if (outputValue == "") {
         outputValue = inputValue + " +";
         operator = "+";
+
         inputValue = "";
         addInput();
     }
@@ -137,8 +143,6 @@ divideBtn.addEventListener("click", () => {
         operate();
     }
 })
-
-equalBtn.addEventListener("click", operate);
 
 zero.addEventListener("click", () => {
     inputValue += "0";
