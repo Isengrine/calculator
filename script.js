@@ -2,24 +2,44 @@ function addInput() {
     mainScreen.innerText = inputValue;
 }
 
-function add() {
+function add(numA, numB) {
 
 }
 
-function substract() {
+function substract(numA, numB) {
 
 }
 
-function multiply() {
+function multiply(numA, numB) {
 
 }
 
-function divide() {
+function divide(numA, numB) {
 
 }
 
-function operate() {
-
+function operate(operators) {
+    operators.forEach(operator => {
+        operator.addEventListener("click", () => {
+            switch (operator.id) {
+                case "+":
+                    console.log("+ clicked!");
+                    break;
+                case "-":
+                    console.log("- clicked!");
+                    break;
+                case "x":
+                    console.log("x clicked!");
+                    break;
+                case "/":
+                    console.log("/ clicked!");
+                    break;
+                case "=":
+                    console.log("= clicked!");
+                    break;
+            }
+        });
+    });
 }
 
 function del() {
@@ -46,6 +66,7 @@ let defaultVaule = "0";
 let inputValue = "";
 let outputValue = "";
 
+const operators = document.querySelectorAll(".operator");
 const addBtn = document.getElementById("+");
 const substractBtn = document.getElementById("-");
 const multiplyBtn = document.getElementById("x");
@@ -53,7 +74,6 @@ const divideBtn = document.getElementById("/");
 const equalBtn = document.getElementById("=");
 const delBtn = document.getElementById("del");
 const clearBtn = document.getElementById("C");
-
 
 const zero = document.getElementById("0");
 const one = document.getElementById("1");
@@ -119,3 +139,5 @@ nine.addEventListener("click", () => {
     inputValue += "9";
     addInput();
 })
+
+operate(operators);
