@@ -1,30 +1,41 @@
-function addInput() {
+function addMainInput() {
     mainScreen.innerText = inputValue;
-    sideScreen.innerText = outputValue;
 
     if (inputValue == "") {
         mainScreen.innerText = defaultVaule;
     }
+}
+
+function addSideInput() {
+    sideScreen.innerText = outputValue;
+
     if (outputValue == ""){
         sideScreen.innerText = defaultVaule;
     }
 }
 
 function add() {
-    mainScreen.innerText = outputValue + inputValue;
+    result = outputValue + inputValue
+    mainScreen.innerText = result;
     clear();
 }
 
 function substract() {
-    mainScreen.innerText = outputValue - inputValue;
+    result = outputValue - inputValue
+    mainScreen.innerText = result;
+    clear();
 }
 
 function multiply() {
-    mainScreen.innerText = outputValue * inputValue;
+    result = outputValue * inputValue
+    mainScreen.innerText = result;
+    clear();
 }
 
 function divide() {
-    mainScreen.innerText = outputValue / inputValue;
+    result = outputValue / inputValue
+    mainScreen.innerText = result;
+    clear();
 }
 
 function operate() {
@@ -52,7 +63,7 @@ function operate() {
 
 function del() {
     inputValue = inputValue.slice(0, -1);
-    addInput();
+    addMainInput();
 }
 
 function clear() {
@@ -64,6 +75,7 @@ function clear() {
 const sideScreen = document.getElementById("input");
 const mainScreen = document.getElementById("output");
 
+let result;
 let defaultVaule = 0;
 let inputValue = "";
 let outputValue = "";
@@ -93,7 +105,8 @@ delBtn.addEventListener("click", del);
 
 clearBtn.addEventListener("click", () => {
     clear();
-    addInput();
+    addMainInput();
+    addSideInput();
 });
 
 equalBtn.addEventListener("click", operate);
@@ -104,10 +117,12 @@ addBtn.addEventListener("click", () => {
         operator = "+";
 
         inputValue = "";
-        addInput();
+        addMainInput();
+        addSideInput();
     }
     else {
         operate();
+        outputValue = "";
     }
 })
 
@@ -116,10 +131,12 @@ substractBtn.addEventListener("click", () => {
         outputValue = inputValue + " -";
         operator = "-";
         inputValue = "";
-        addInput();
+        addMainInput();
+        addSideInput();
     }
     else {
         operate();
+        outputValue = "";
     }
 })
 
@@ -128,10 +145,12 @@ multiplyBtn.addEventListener("click", () => {
         outputValue = inputValue + " x";
         operator = "x";
         inputValue = "";
-        addInput();
+        addMainInput();
+        addSideInput();
     }
     else {
         operate();
+        outputValue = "";
     }
 })
 
@@ -140,59 +159,61 @@ divideBtn.addEventListener("click", () => {
         outputValue = inputValue + " /";
         operator = "/";
         inputValue = "";
-        addInput();
+        addMainInput();
+        addSideInput();
     }
     else {
         operate();
+        outputValue = "";
     }
 })
 
 zero.addEventListener("click", () => {
     inputValue += "0";
-    addInput();
+    addMainInput();
 })
 
 one.addEventListener("click", () => {
     inputValue += "1";
-    addInput();
+    addMainInput();
 })
 
 two.addEventListener("click", () => {
     inputValue += "2";
-    addInput();
+    addMainInput();
 })
 
 three.addEventListener("click", () => {
     inputValue += "3";
-    addInput();
+    addMainInput();
 })
 
 four.addEventListener("click", () => {
     inputValue += "4";
-    addInput();
+    addMainInput();
 })
 
 five.addEventListener("click", () => {
     inputValue += "5";
-    addInput();
+    addMainInput();
 })
 
 six.addEventListener("click", () => {
     inputValue += "6";
-    addInput();
+    addMainInput();
 })
 
 seven.addEventListener("click", () => {
     inputValue += "7";
-    addInput();
+    addMainInput();
 })
 
 eight.addEventListener("click", () => {
     inputValue += "8";
-    addInput();
+    addMainInput();
 })
 
 nine.addEventListener("click", () => {
     inputValue += "9";
-    addInput();
+    addMainInput();
 })
