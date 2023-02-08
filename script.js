@@ -1,21 +1,41 @@
-function add() {
-
+function add(a, b) {
+    result = a + b;
+    return result;
 }
 
-function substract() {
-
+function substract(a, b) {
+    result = a - b;
+    return result;
 }
 
-function multiply() {
-    
+function multiply(a, b) {
+    result = a * b;
+    return result;
 }
 
-function divide() {
-    
+function divide(a, b) {
+    result = a / b;
+    return result;
 }
 
 function operate() {
-
+    firstNum = parseFloat(firstNum);
+    secondNum = parseFloat(secondNum);
+    
+    switch (operator) {
+        case "+":
+            add(firstNum, secondNum);
+            break;
+        case "-":
+            substract(firstNum, secondNum);
+            break;
+        case "x":
+            multiply(firstNum, secondNum);
+            break;
+        case "/":
+            divide(firstNum, secondNum);
+            break;
+    }
 }
 
 function del() {
@@ -32,6 +52,7 @@ const operatorBtns = document.querySelectorAll(".operator");
 let firstNum = "";
 let secondNum = "";
 let operator = "";
+let result;
 
 numberBtns.forEach(numberBtn => {
     numberBtn.addEventListener("click", () => {
@@ -49,8 +70,17 @@ numberBtns.forEach(numberBtn => {
 
 operatorBtns.forEach(operatorBtn => {
     operatorBtn.addEventListener("click", () => {
-        operator = "";
-        operator = operatorBtn.textContent;
-        console.log(operator);
+        if (operator == "") {
+            operator = operatorBtn.textContent;
+            console.log(operator);
+        }
+
+        else {
+            operate();
+            console.log(result);
+            operator = "";
+            operator = operatorBtn.textContent;
+            console.log(operator);
+        }
     });
 });
