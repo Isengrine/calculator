@@ -15,41 +15,28 @@ function divide(a, b) {
 }
 
 function operate() {
-    firstNum = parseFloat(firstNum);
-    secondNum = parseFloat(secondNum);
-    
-    switch (operator) {
-        case "+":
-            return add(firstNum, secondNum);
-        case "-":
-            return substract(firstNum, secondNum);
-        case "x":
-            return multiply(firstNum, secondNum);
-        case "/":
-            return divide(firstNum, secondNum);
-        default:
-            break;
-    }
+    numStr = numStr.split(" ");
+    console.log(numStr);
 }
 
 function del() {
-    firstNum = firstNum.slice(0, -1);
+    numStr = numStr.slice(0, -1);
     input();
 }
 
 function clear() {
-    firstNum = "";
+    numStr = "";
     secondNum = "";
     operator = "";
     input();
 }
 
 function input() {
-    if (firstNum == "") {
-        mainScreen.innerText = 0;
+    if (numStr == "") {
+        auxScreen.innerText = 0;
     }
     else {
-        mainScreen.innerText = firstNum;
+        auxScreen.innerText = numStr;
     }
 }
 
@@ -61,9 +48,11 @@ const clearBtn = document.getElementById("C");
 const mainScreen = document.getElementById("mainScreen");
 const auxScreen = document.getElementById("auxScreen");
 
-let firstNum = "";
+let numStr = "";
 let secondNum = "";
 let operator = "";
+
+equalsBtn.addEventListener("click", operate);
 
 delBtn.addEventListener("click", del);
 
@@ -71,13 +60,14 @@ clearBtn.addEventListener("click", clear);
 
 numberBtns.forEach(numberBtn => {
     numberBtn.addEventListener("click", () => {
-        firstNum += numberBtn.textContent;
+        numStr += numberBtn.textContent;
         input();
     });
 });
 
 operatorBtns.forEach(operatorBtn => {
     operatorBtn.addEventListener("click", () => {
-        console.log(operatorBtn.textContent);
+        numStr += " " + operatorBtn.textContent + " ";
+        input();
     });
 });
