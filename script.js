@@ -12,6 +12,7 @@ function addInput() {
 
 function add() {
     mainScreen.innerText = outputValue + inputValue;
+    clear();
 }
 
 function substract() {
@@ -58,7 +59,6 @@ function clear() {
     inputValue = "";
     outputValue = "";
     operator = "";
-    addInput();
 }
 
 const sideScreen = document.getElementById("input");
@@ -91,7 +91,10 @@ const nine = document.getElementById("9");
 
 delBtn.addEventListener("click", del);
 
-clearBtn.addEventListener("click", clear);
+clearBtn.addEventListener("click", () => {
+    clear();
+    addInput();
+});
 
 equalBtn.addEventListener("click", operate);
 
