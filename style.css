@@ -22,10 +22,12 @@ body {
 
 #input {
     font-size: 18px;
+    min-height: 24px;
 }
 
 #output {
     font-size: 36px;
+    min-height: 48px;
     text-align: end;
 }
 
