@@ -11,19 +11,19 @@ function addInput() {
 }
 
 function add() {
-    mainScreen.innerText = inputValue + outputValue;
+    mainScreen.innerText = outputValue + inputValue;
 }
 
 function substract() {
-    mainScreen.innerText = inputValue - outputValue;
+    mainScreen.innerText = outputValue - inputValue;
 }
 
 function multiply() {
-    mainScreen.innerText = inputValue * outputValue;
+    mainScreen.innerText = outputValue * inputValue;
 }
 
 function divide() {
-    mainScreen.innerText = inputValue / outputValue;
+    mainScreen.innerText = outputValue / inputValue;
 }
 
 function operate() {
