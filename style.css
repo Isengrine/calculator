@@ -20,12 +20,12 @@ body {
     padding: 12px;
 }
 
-#input {
+#auxScreen {
     font-size: 18px;
     min-height: 24px;
 }
 
-#output {
+#mainScreen {
     font-size: 36px;
     min-height: 48px;
     text-align: end;

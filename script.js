@@ -1,21 +1,17 @@
 function add(a, b) {
-    result = a + b;
-    return result;
+    return a + b;
 }
 
 function substract(a, b) {
-    result = a - b;
-    return result;
+    return a - b;
 }
 
 function multiply(a, b) {
-    result = a * b;
-    return result;
+    return a * b;
 }
 
 function divide(a, b) {
-    result = a / b;
-    return result;
+    return a / b;
 }
 
 function operate() {
@@ -24,17 +20,13 @@ function operate() {
     
     switch (operator) {
         case "+":
-            add(firstNum, secondNum);
-            break;
+            return add(firstNum, secondNum);
         case "-":
-            substract(firstNum, secondNum);
-            break;
+            return substract(firstNum, secondNum);
         case "x":
-            multiply(firstNum, secondNum);
-            break;
+            return multiply(firstNum, secondNum);
         case "/":
-            divide(firstNum, secondNum);
-            break;
+            return divide(firstNum, secondNum);
     }
 }
 
@@ -46,41 +38,28 @@ function clear() {
 
 }
 
+function input() {
+    mainScreen.innerText = firstNum;
+}
+
 const numberBtns = document.querySelectorAll(".number");
 const operatorBtns = document.querySelectorAll(".operator");
+const mainScreen = document.getElementById("mainScreen");
+const auxScreen = document.getElementById("auxScreen");
 
 let firstNum = "";
 let secondNum = "";
 let operator = "";
-let result;
 
 numberBtns.forEach(numberBtn => {
     numberBtn.addEventListener("click", () => {
-        if (operator == "") {
-            firstNum += numberBtn.textContent;
-            console.log(firstNum);
-        }
-
-        else {
-            secondNum += numberBtn.textContent;
-            console.log(secondNum);
-        }
+        firstNum += numberBtn.textContent;
+        input();
     });
 });
 
 operatorBtns.forEach(operatorBtn => {
     operatorBtn.addEventListener("click", () => {
-        if (operator == "") {
-            operator = operatorBtn.textContent;
-            console.log(operator);
-        }
-
-        else {
-            operate();
-            console.log(result);
-            operator = "";
-            operator = operatorBtn.textContent;
-            console.log(operator);
-        }
+        console.log(operatorBtn.textContent);
     });
 });
