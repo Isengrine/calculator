@@ -23,21 +23,24 @@ function operate() {
         switch (numArray[i]) {
             case "+":
                 console.log(numArray[i-1], numArray[i+1]);
+                numArray[i+1] = add(numArray[i-1], numArray[i+1]);
                 break;
             case "-":
                 console.log(numArray[i-1], numArray[i+1]);
+                numArray[i+1] = substract(numArray[i-1], numArray[i+1]);
                 break;
             case "x":
                 console.log(numArray[i-1], numArray[i+1]);
+                numArray[i+1] = multiply(numArray[i-1], numArray[i+1]);
                 break;
             case "/":
                 console.log(numArray[i-1], numArray[i+1]);
+                numArray[i+1] = divide(numArray[i-1], numArray[i+1]);
                 break;
             default:
                 break;
         }
     }
-    return result;
 }
 
 function del() {
