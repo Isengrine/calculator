@@ -5,7 +5,7 @@
 
 html, body {
     height: 100%;
-    background-color: #000000;
+    background-color: #dcab4f;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,6 +13,7 @@ html, body {
 
 #container {
     background-color: moccasin;
+    border: solid;
     border-radius: 64px 64px 12px 12px;
 }
 
