@@ -174,6 +174,7 @@ operatorBtns.forEach(operatorBtn => {
 });
 
 document.addEventListener('keydown', (event) => {
+    event.preventDefault();
     let key = event.key;
     if (key >= 0 && key <= 9) {
         tmp = numStr.slice(-1);
