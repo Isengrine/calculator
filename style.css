@@ -67,9 +67,9 @@ html, body {
 #screen {
     color: turquoise;
     background-color: black;
-    border: solid white;
+    border: solid 2px white;
     margin: 12px;
-    padding: 12px;
+    padding: 2px;
     font-family: Digital-7;
     text-shadow: 
         0 0 8px turquoise;
