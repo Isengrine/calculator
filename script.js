@@ -51,7 +51,7 @@ function del() {
 
 function clear() {
     numStr = "";
-    secondNum = "";
+    dot = false;
     operator = "";
     result = "";
     input();
@@ -60,7 +60,7 @@ function clear() {
 
 function input() {
     if (numStr == "") {
-        auxScreen.innerText = 0;
+        auxScreen.innerText = "";
     }
     else {
         auxScreen.innerText = numStr;
@@ -81,6 +81,7 @@ function output() {
 
 const numberBtns = document.querySelectorAll(".number");
 const operatorBtns = document.querySelectorAll(".operator");
+const pointBtn = document.getElementById(".");
 const equalsBtn = document.getElementById("=");
 const delBtn = document.getElementById("del");
 const clearBtn = document.getElementById("C");
@@ -88,8 +89,8 @@ const mainScreen = document.getElementById("mainScreen");
 const auxScreen = document.getElementById("auxScreen");
 
 let numStr = "";
-let secondNum = "";
 let operator = "";
+let dot = false;
 let result = "";
 
 delBtn.addEventListener("click", del);
@@ -101,6 +102,18 @@ equalsBtn.addEventListener("click", () => {
     input();
     operate();
 });
+
+pointBtn.addEventListener("click", () => {
+    if (!dot) {
+        numStr += ".";
+        dot = true;
+        input();
+    }
+
+    else {
+        return;
+    }
+})
 
 numberBtns.forEach(numberBtn => {
     numberBtn.addEventListener("click", () => {
@@ -121,10 +134,12 @@ operatorBtns.forEach(operatorBtn => {
         if (mainScreen.textContent != 0) {
             clear();
             numStr += " " + operatorBtn.textContent + " ";
+            dot = false;
             input();
         }
         else {
             numStr += " " + operatorBtn.textContent + " ";
+            dot = false;
             input();
         }
     });
