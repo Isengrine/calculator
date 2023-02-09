@@ -41,7 +41,6 @@ function operate() {
 
 function del() {
     tmp = numStr.slice(-1);
-    console.log(tmp);
     if (tmp == " ") {
         console.log("3 chars")
         numStr = numStr.slice(0, -3);
@@ -102,10 +101,16 @@ delBtn.addEventListener("click", del);
 clearBtn.addEventListener("click", clear);
 
 equalsBtn.addEventListener("click", () => {
-    numStr += " ="
-    dot = true;
-    input();
-    operate();
+    tmp = numStr.slice(-1)
+    if (tmp == "=") {
+        return;
+    }
+    else {
+        numStr += " ="
+        dot = true;
+        input();
+        operate();
+    }
 });
 
 pointBtn.addEventListener("click", () => {
@@ -122,7 +127,8 @@ pointBtn.addEventListener("click", () => {
 
 numberBtns.forEach(numberBtn => {
     numberBtn.addEventListener("click", () => {
-        if (mainScreen.innerText != 0) {
+        tmp = numStr.slice(-1);
+        if (tmp == "=") {
             clear();
             numStr += numberBtn.textContent;
             input();
