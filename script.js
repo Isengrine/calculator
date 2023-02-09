@@ -35,7 +35,11 @@ function operate() {
         }
     }
     result = numArray[numArray.length - 2];
-    result = Math.round(result * 1000000)/1000000;
+    result = result.toString();
+    if (result.length > 16) {
+        result = parseFloat(result);
+        result = result.toExponential(6);
+    }
     return output();
 }
 
