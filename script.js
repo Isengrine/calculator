@@ -40,8 +40,17 @@ function operate() {
 }
 
 function del() {
-    numStr = numStr.slice(0, -1);
-    input();
+    tmp = numStr.slice(-1);
+    console.log(tmp);
+    if (tmp == " ") {
+        console.log("3 chars")
+        numStr = numStr.slice(0, -3);
+        input();
+    }
+    else {
+        numStr = numStr.slice(0, -1);
+        input();
+    }
 }
 
 function clear() {
