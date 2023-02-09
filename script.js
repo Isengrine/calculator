@@ -40,6 +40,8 @@ function operate() {
         }
     }
     result = numArray.pop();
+    numStr = "";
+    input();
     return output();
 }
 
