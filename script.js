@@ -1,17 +1,17 @@
 function add(a, b) {
-    return a + b;
+    return parseFloat(a) + parseFloat(b);
 }
 
 function substract(a, b) {
-    return a - b;
+    return parseFloat(a) - parseFloat(b);
 }
 
 function multiply(a, b) {
-    return a * b;
+    return parseFloat(a) * parseFloat(b);
 }
 
 function divide(a, b) {
-    return a / b;
+    return parseFloat(a) / parseFloat(b);
 }
 
 //TODO: Make the result of each operation become the whole string before the current operator
