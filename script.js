@@ -39,9 +39,8 @@ function operate() {
                 break;
         }
     }
-    result = numArray.pop();
-    numStr = "";
-    input();
+    console.log(numArray);
+    result = numArray[numArray.length - 2];
     return output();
 }
 
@@ -72,6 +71,9 @@ function output() {
     if (result == "") {
         mainScreen.innerText = 0;
     }
+    else if (isNaN(result)) {
+        mainScreen.innerText = "Syntax ERROR";
+    }
     else {
         mainScreen.innerText = result;
     }
@@ -90,11 +92,15 @@ let secondNum = "";
 let operator = "";
 let result = "";
 
-equalsBtn.addEventListener("click", operate);
-
 delBtn.addEventListener("click", del);
 
 clearBtn.addEventListener("click", clear);
+
+equalsBtn.addEventListener("click", () => {
+    numStr += " ="
+    input();
+    operate();
+});
 
 numberBtns.forEach(numberBtn => {
     numberBtn.addEventListener("click", () => {
