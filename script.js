@@ -24,7 +24,7 @@ function operate() {
             case "-":
                 numArray[i+1] = substract(numArray[i-1], numArray[i+1]);
                 break;
-            case "x":
+            case "*":
                 numArray[i+1] = multiply(numArray[i-1], numArray[i+1]);
                 break;
             case "/":
@@ -85,6 +85,22 @@ function output() {
     }
 }
 
+function operatorKeyHandler(key) {
+    if (mainScreen.textContent != 0) {
+        tmp = result;
+        clear();
+        numStr = tmp;
+        numStr += " " + key + " ";
+        dot = false;
+        input();
+    }
+    else {
+        numStr += " " + key + " ";
+        dot = false;
+        input();
+    }
+}
+
 const numberBtns = document.querySelectorAll(".number");
 const operatorBtns = document.querySelectorAll(".operator");
 const pointBtn = document.getElementById(".");
@@ -121,10 +137,6 @@ pointBtn.addEventListener("click", () => {
         numStr += ".";
         dot = true;
         input();
-    }
-
-    else {
-        return;
     }
 })
 
@@ -163,5 +175,51 @@ operatorBtns.forEach(operatorBtn => {
 
 document.addEventListener('keydown', (event) => {
     let key = event.key;
-    console.log(key);
+    if (key >= 0 && key <= 9) {
+        tmp = numStr.slice(-1);
+        if (tmp == "=") {
+            clear();
+            numStr += key;
+            input();
+        }
+        else {
+            numStr += key;
+            input();
+        }
+    }
+    else if (key == "Backspace") {
+        del();
+    }
+    else if (key == "Escape") {
+        clear();
+    }
+    else if (key == "." && !dot) {
+        numStr += ".";
+        dot = true;
+        input();
+    }    
+    else if (key == "Enter") {
+        tmp = numStr.slice(-1)
+        if (tmp == "=") {
+            return;
+        }
+        else {
+            numStr += " ="
+            dot = true;
+            input();
+            operate();
+        }
+    }
+    else if (key == "+") {
+        operatorKeyHandler(key);
+    }
+    else if (key == "-") {
+        operatorKeyHandler(key);
+    }
+    else if (key == "*") {
+        operatorKeyHandler(key);
+    }
+    else if (key == "/") {
+        operatorKeyHandler(key);
+    }
 });
