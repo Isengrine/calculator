@@ -15,7 +15,7 @@ body {
 }
 
 #calculator {
-    width: 360px;
+    width: 380px;
     height: 480px;
     margin: 12px;
     background-color: saddlebrown;
@@ -24,22 +24,44 @@ body {
     flex-direction: column;
 }
 
+#top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 36px 18px 12px 18px;
+}
+
+#solar {
+    display: flex;
+}
+
+.panel {
+    min-height: 36px;
+    min-width: 36px;
+    background-color: slategray;
+    border: solid 1px white;
+}
+
 #screen {
     color: red;
     background-color: black;
     border: solid white;
-    margin: 24px;
+    margin: 12px;
     padding: 12px;
     font-family: Digital-7;
+    text-shadow: 
+        0 0 4px red,
+        0 0 8px red,
+        0 0 12px red;
 }
 
 #auxScreen {
-    font-size: 18px;
+    font-size: 20px;
     min-height: 24px;
 }
 
 #mainScreen {
-    font-size: 36px;
+    font-size: 40px;
     min-height: 48px;
     text-align: end;
 }
@@ -50,6 +72,7 @@ body {
     margin: 12px;
     display: flex;
     flex: 1;
+    justify-content: center;
     align-items: center;
 }
 
@@ -59,6 +82,8 @@ body {
 
 #operators {
     min-width: 140px;
+    background-color: tan;
+    border-radius: 8px;
 }
 
 button {
