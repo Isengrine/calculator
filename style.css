@@ -43,16 +43,16 @@ body {
 }
 
 #screen {
-    color: red;
+    color: turquoise;
     background-color: black;
     border: solid white;
     margin: 12px;
     padding: 12px;
     font-family: Digital-7;
     text-shadow: 
-        0 0 4px red,
-        0 0 8px red,
-        0 0 12px red;
+        0 0 4px turquoise,
+        0 0 8px turquoise,
+        0 0 12px turquoise;
 }
 
 #auxScreen {
@@ -84,6 +84,7 @@ body {
     min-width: 140px;
     background-color: tan;
     border-radius: 8px;
+    margin-right: 8px;
 }
 
 button {
