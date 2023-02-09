@@ -46,6 +46,9 @@ function del() {
         numStr = numStr.slice(0, -3);
         input();
     }
+    else if (tmp == "=") {
+        clear();
+    }
     else {
         numStr = numStr.slice(0, -1);
         input();
