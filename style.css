@@ -1,5 +1,4 @@
 body {
-    background-color: gainsboro;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,14 +7,15 @@ body {
 #calculator {
     width: 360px;
     height: 480px;
-    background-color: aquamarine;
+    background-color: moccasin;
     border: solid;
     display: flex;
     flex-direction: column;
 }
 
 #screen {
-    background-color: wheat;
+    color: red;
+    background-color: black;
     margin: 24px;
     padding: 12px;
 }
@@ -47,5 +47,7 @@ body {
 }
 
 button {
+    color: white;
+    background-color: black;
     padding: 24px;
 }
