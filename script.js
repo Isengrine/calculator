@@ -104,14 +104,28 @@ equalsBtn.addEventListener("click", () => {
 
 numberBtns.forEach(numberBtn => {
     numberBtn.addEventListener("click", () => {
-        numStr += numberBtn.textContent;
-        input();
+        if (mainScreen.innerText != 0) {
+            clear();
+            numStr += numberBtn.textContent;
+            input();
+        }
+        else {
+            numStr += numberBtn.textContent;
+            input();
+        }
     });
 });
 
 operatorBtns.forEach(operatorBtn => {
     operatorBtn.addEventListener("click", () => {
-        numStr += " " + operatorBtn.textContent + " ";
-        input();
+        if (mainScreen.textContent != 0) {
+            clear();
+            numStr += " " + operatorBtn.textContent + " ";
+            input();
+        }
+        else {
+            numStr += " " + operatorBtn.textContent + " ";
+            input();
+        }
     });
 });
