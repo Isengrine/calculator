@@ -9,11 +9,17 @@ body {
     align-items: center;
 }
 
+#container {
+    background-color: tan;
+    border-radius: 64px 64px 12px 12px;
+}
+
 #calculator {
     width: 360px;
     height: 480px;
-    background-color: moccasin;
-    border: solid;
+    margin: 12px;
+    background-color: saddlebrown;
+    border-radius: 64px 64px 12px 12px;
     display: flex;
     flex-direction: column;
 }
@@ -21,6 +27,7 @@ body {
 #screen {
     color: red;
     background-color: black;
+    border: solid white;
     margin: 24px;
     padding: 12px;
     font-family: Digital-7;
@@ -38,6 +45,8 @@ body {
 }
 
 #pad {
+    background-color: moccasin;
+    border-radius: 24px 24px 12px 12px;
     margin: 12px;
     display: flex;
     flex: 1;
@@ -53,7 +62,13 @@ body {
 }
 
 button {
+    min-width: 48px;
     color: white;
     background-color: black;
-    padding: 24px;
+    margin: 8px;
+    padding: 0px;
+}
+
+#C {
+    background-color: brown;
 }
