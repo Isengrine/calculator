@@ -160,3 +160,8 @@ operatorBtns.forEach(operatorBtn => {
         }
     });
 });
+
+document.addEventListener('keydown', (event) => {
+    let key = event.key;
+    console.log(key);
+});
