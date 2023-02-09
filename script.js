@@ -16,31 +16,26 @@ function divide(a, b) {
 
 function operate() {
     numArray = numStr.split(" ");
-    console.log(numArray);
     for (let i = 1; i < numArray.length; i += 2) {
         switch (numArray[i]) {
             case "+":
-                console.log(numArray[i-1], numArray[i+1]);
                 numArray[i+1] = add(numArray[i-1], numArray[i+1]);
                 break;
             case "-":
-                console.log(numArray[i-1], numArray[i+1]);
                 numArray[i+1] = substract(numArray[i-1], numArray[i+1]);
                 break;
             case "x":
-                console.log(numArray[i-1], numArray[i+1]);
                 numArray[i+1] = multiply(numArray[i-1], numArray[i+1]);
                 break;
             case "/":
-                console.log(numArray[i-1], numArray[i+1]);
                 numArray[i+1] = divide(numArray[i-1], numArray[i+1]);
                 break;
             default:
                 break;
         }
     }
-    console.log(numArray);
     result = numArray[numArray.length - 2];
+    result = Math.round(result * 1000000)/1000000;
     return output();
 }
 
