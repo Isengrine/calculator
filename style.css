@@ -3,10 +3,29 @@
     src: url(./fonts/digital-7.ttf);
 }
 
+@font-face {
+    font-family: Neon;
+    src: url(./fonts/Neon.ttf);
+}
+
 html, body {
     height: 100%;
     background-color: #dcab4f;
     display: flex;
+    flex-direction: column;
+}
+
+#header {
+    font-family: Neon;
+    font-size: 48px;
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+}
+
+#content {
+    display: flex;
+    flex: 1;
     justify-content: center;
     align-items: center;
 }
@@ -98,4 +117,16 @@ button {
 
 #C {
     background-color: brown;
+}
+
+#footer {
+    font-family: Neon;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#github {
+    margin: 8px;
 }
