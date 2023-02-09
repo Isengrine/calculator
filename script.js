@@ -133,7 +133,9 @@ numberBtns.forEach(numberBtn => {
 operatorBtns.forEach(operatorBtn => {
     operatorBtn.addEventListener("click", () => {
         if (mainScreen.textContent != 0) {
+            tmp = result;
             clear();
+            numStr = tmp;
             numStr += " " + operatorBtn.textContent + " ";
             dot = false;
             input();
