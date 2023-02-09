@@ -93,7 +93,7 @@ function operatorKeyHandler(key) {
         dot = false;
         input();
     }
-    else {
+    else if (numStr.length <= 34) {
         numStr += " " + key + " ";
         dot = false;
         input();
@@ -179,7 +179,7 @@ document.addEventListener('keydown', (event) => {
             numStr += key;
             input();
         }
-        else {
+        else if (numStr.length <= 34) {
             numStr += key;
             input();
         }
@@ -190,17 +190,14 @@ document.addEventListener('keydown', (event) => {
     else if (key == "Escape") {
         clear();
     }
-    else if (key == "." && !dot) {
+    else if (key == "." && !dot && numStr.length <= 34) {
         numStr += ".";
         dot = true;
         input();
     }    
     else if (key == "Enter") {
         tmp = numStr.slice(-1)
-        if (tmp == "=") {
-            return;
-        }
-        else {
+        if (tmp != "=") {
             numStr += " ="
             dot = true;
             input();
