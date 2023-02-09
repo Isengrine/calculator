@@ -14,9 +14,30 @@ function divide(a, b) {
     return a / b;
 }
 
+//TODO: Make the result of each operation become the whole string before the current operator
+//(i-1) should always be the result of the previous operation
 function operate() {
-    numStr = numStr.split(" ");
-    console.log(numStr);
+    numArray = numStr.split(" ");
+    console.log(numArray);
+    for (let i = 1; i < numArray.length; i += 2) {
+        switch (numArray[i]) {
+            case "+":
+                console.log(numArray[i-1], numArray[i+1]);
+                break;
+            case "-":
+                console.log(numArray[i-1], numArray[i+1]);
+                break;
+            case "x":
+                console.log(numArray[i-1], numArray[i+1]);
+                break;
+            case "/":
+                console.log(numArray[i-1], numArray[i+1]);
+                break;
+            default:
+                break;
+        }
+    }
+    return result;
 }
 
 function del() {
