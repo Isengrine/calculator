@@ -42,7 +42,6 @@ function operate() {
 function del() {
     tmp = numStr.slice(-1);
     if (tmp == " ") {
-        console.log("3 chars")
         numStr = numStr.slice(0, -3);
         input();
     }
@@ -121,10 +120,7 @@ clearBtn.addEventListener("click", clear);
 
 equalsBtn.addEventListener("click", () => {
     tmp = numStr.slice(-1)
-    if (tmp == "=") {
-        return;
-    }
-    else {
+    if (tmp != "=") {
         numStr += " ="
         dot = true;
         input();
@@ -133,7 +129,7 @@ equalsBtn.addEventListener("click", () => {
 });
 
 pointBtn.addEventListener("click", () => {
-    if (!dot) {
+    if (!dot && numStr.length <= 34) {
         numStr += ".";
         dot = true;
         input();
@@ -148,7 +144,7 @@ numberBtns.forEach(numberBtn => {
             numStr += numberBtn.textContent;
             input();
         }
-        else {
+        else if (numStr.length <= 34) {
             numStr += numberBtn.textContent;
             input();
         }
@@ -165,7 +161,7 @@ operatorBtns.forEach(operatorBtn => {
             dot = false;
             input();
         }
-        else {
+        else if (numStr.length <= 34) {
             numStr += " " + operatorBtn.textContent + " ";
             dot = false;
             input();
