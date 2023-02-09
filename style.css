@@ -4,13 +4,14 @@
 }
 
 body {
+    background-color: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #container {
-    background-color: tan;
+    background-color: moccasin;
     border-radius: 64px 64px 12px 12px;
 }
 
@@ -50,9 +51,7 @@ body {
     padding: 12px;
     font-family: Digital-7;
     text-shadow: 
-        0 0 4px turquoise,
-        0 0 8px turquoise,
-        0 0 12px turquoise;
+        0 0 8px turquoise;
 }
 
 #auxScreen {
@@ -67,7 +66,7 @@ body {
 }
 
 #pad {
-    background-color: moccasin;
+    background-color: tan;
     border-radius: 24px 24px 12px 12px;
     margin: 12px;
     display: flex;
@@ -82,7 +81,7 @@ body {
 
 #operators {
     min-width: 140px;
-    background-color: tan;
+    background-color: moccasin;
     border-radius: 8px;
     margin-right: 8px;
 }
