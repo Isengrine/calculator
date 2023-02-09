@@ -14,8 +14,6 @@ function divide(a, b) {
     return parseFloat(a) / parseFloat(b);
 }
 
-//TODO: Make the result of each operation become the whole string before the current operator
-//(i-1) should always be the result of the previous operation
 function operate() {
     numArray = numStr.split(" ");
     console.log(numArray);
@@ -41,6 +39,8 @@ function operate() {
                 break;
         }
     }
+    result = numArray.pop();
+    return output();
 }
 
 function del() {
@@ -52,7 +52,9 @@ function clear() {
     numStr = "";
     secondNum = "";
     operator = "";
+    result = "";
     input();
+    output();
 }
 
 function input() {
@@ -61,6 +63,15 @@ function input() {
     }
     else {
         auxScreen.innerText = numStr;
+    }
+}
+
+function output() {
+    if (result == "") {
+        mainScreen.innerText = 0;
+    }
+    else {
+        mainScreen.innerText = result;
     }
 }
 
@@ -75,6 +86,7 @@ const auxScreen = document.getElementById("auxScreen");
 let numStr = "";
 let secondNum = "";
 let operator = "";
+let result = "";
 
 equalsBtn.addEventListener("click", operate);
 
