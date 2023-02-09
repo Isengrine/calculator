@@ -99,6 +99,7 @@ clearBtn.addEventListener("click", clear);
 
 equalsBtn.addEventListener("click", () => {
     numStr += " ="
+    dot = true;
     input();
     operate();
 });
