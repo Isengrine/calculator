@@ -35,11 +35,6 @@ function operate() {
         }
     }
     result = numArray[numArray.length - 2];
-    result = result.toString();
-    if (result.length > 16) {
-        result = parseFloat(result);
-        result = result.toExponential(6);
-    }
     return output();
 }
 
@@ -97,7 +92,7 @@ function operatorKeyHandler(key) {
         dot = false;
         input();
     }
-    else if (numStr.length <= 34) {
+    else {
         numStr += " " + key + " ";
         dot = false;
         input();
@@ -133,7 +128,7 @@ equalsBtn.addEventListener("click", () => {
 });
 
 pointBtn.addEventListener("click", () => {
-    if (!dot && numStr.length <= 34) {
+    if (!dot) {
         numStr += ".";
         dot = true;
         input();
@@ -148,7 +143,7 @@ numberBtns.forEach(numberBtn => {
             numStr += numberBtn.textContent;
             input();
         }
-        else if (numStr.length <= 34) {
+        else {
             numStr += numberBtn.textContent;
             input();
         }
@@ -165,7 +160,7 @@ operatorBtns.forEach(operatorBtn => {
             dot = false;
             input();
         }
-        else if (numStr.length <= 34) {
+        else {
             numStr += " " + operatorBtn.textContent + " ";
             dot = false;
             input();
@@ -183,7 +178,7 @@ document.addEventListener('keydown', (event) => {
             numStr += key;
             input();
         }
-        else if (numStr.length <= 34) {
+        else {
             numStr += key;
             input();
         }
@@ -194,7 +189,7 @@ document.addEventListener('keydown', (event) => {
     else if (key == "Escape") {
         clear();
     }
-    else if (key == "." && !dot && numStr.length <= 34) {
+    else if (key == "." && !dot) {
         numStr += ".";
         dot = true;
         input();

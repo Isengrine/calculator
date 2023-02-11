@@ -74,6 +74,7 @@ html, body {
     font-feature-settings: "tnum";
     text-shadow: 
         0 0 8px turquoise;
+    overflow: scroll;
 }
 
 #auxScreen {
