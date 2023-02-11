@@ -1,6 +1,6 @@
 @font-face {
     font-family: Digital-7;
-    src: url(./fonts/digital-7.ttf);
+    src: url(./fonts/digital-7.mono.ttf);
 }
 
 @font-face {
@@ -71,6 +71,7 @@ html, body {
     margin: 12px;
     padding: 2px;
     font-family: Digital-7;
+    font-feature-settings: "tnum";
     text-shadow: 
         0 0 8px turquoise;
 }
